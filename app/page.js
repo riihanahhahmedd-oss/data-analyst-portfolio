@@ -1,13 +1,43 @@
 
-const stats = [
-  { label: "Projects", value: "Coming Soon", icon: "▦" },
-  { label: "Core Skills", value: "SQL · BI · Python", icon: "⌘" },
-  { label: "Focus", value: "Data Analytics", icon: "◎" },
-];
+"use client";
+
+import { useEffect, useState } from "react";
+import { supabase } from "../lib/supabase";
 
 const skills = ["SQL", "Power BI", "Python", "Excel", "Data Visualization"];
 
 export default function Home() {
+  const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    async function fetchProjects() {
+      const { data, error } = await supabase
+        .from("projects")
+        .select("*")
+        .eq("status", "published")
+        .order("display_order", { ascending: true })
+        .order("created_at", { ascending: false });
+
+      if (error) {
+        setError("Unable to load projects right now.");
+      } else {
+        setProjects(data || []);
+      }
+
+      setLoading(false);
+    }
+
+    fetchProjects();
+  }, []);
+
+  const stats = [
+    { label: "Published Projects", value: projects.length, icon: "▦" },
+    { label: "Core Skills", value: "SQL · BI · Python", icon: "⌘" },
+    { label: "Focus", value: "Data Analytics", icon: "◎" },
+  ];
+
   return (
     <main className="dashboard">
       <aside className="sidebar">
@@ -28,8 +58,8 @@ export default function Home() {
         </nav>
 
         <div className="sidebar-footer">
-          <a href="https://github.com/" target="_blank">GitHub ↗</a>
-          <a href="https://linkedin.com/" target="_blank">LinkedIn ↗</a>
+          <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub ↗</a>
+          <a href="https://linkedin.com/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
         </div>
       </aside>
 
@@ -86,12 +116,63 @@ export default function Home() {
               <p className="eyebrow">03 / SELECTED WORK</p>
               <h2>Featured Projects</h2>
             </div>
-            <span className="coming">PROJECTS COMING SOON</span>
+            <span className="coming">
+              {loading ? "LOADING PROJECTS..." : `${projects.length} PROJECTS`}
+            </span>
           </div>
-          <p>
-            My data analytics projects and business case studies
-            will be showcased here.
-          </p>
+
+          {loading && <p>Loading published projects...</p>}
+
+          {!loading && error && <p>{error}</p>}
+
+          {!loading && !error && projects.length === 0 && (
+            <p>
+              No published projects yet. My data analytics projects and
+              business case studies will be showcased here soon.
+            </p>
+          )}
+
+          {!loading && !error && projects.length > 0 && (
+            <div className="project-list">
+              {projects.map((project) => (
+                <article className="project-card" key={project.id}>
+                  {project.cover_image_url && (
+                    <img
+                      src={project.cover_image_url}
+                      alt={project.title}
+                      className="project-image"
+                    />
+                  )}
+
+                  <p className="eyebrow">{project.category}</p>
+                  <h3>{project.title}</h3>
+                  <p>{project.summary}</p>
+
+                  {project.tools?.length > 0 && (
+                    <div className="skills">
+                      {project.tools.map((tool) => (
+                        <span key={tool}>{tool}</span>
+                      ))}
+                    </div>
+                  )}
+
+                  <div className="project-links">
+                    {project.github_url && (
+                      <a href={project.github_url} target="_blank" rel="noreferrer">
+                        GitHub ↗
+                      </a>
+                    )}
+
+                    {project.live_url && (
+                      <a href={project.live_url} target="_blank" rel="noreferrer">
+                        Live Demo ↗
+                      </a>
+                    )}
+                  </div>
+                </article>
+              ))}
+            </div>
+          )}
         </section>
 
         <section className="panel" id="education">
