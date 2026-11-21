@@ -7,7 +7,12 @@ import { supabase } from "../lib/supabase";
 const GITHUB_URL =
   "https://github.com/riihanahhahmedd-oss/RihanahAhmed.github.io";
 
+// Replace this with your actual LinkedIn profile URL.
+const LINKEDIN_URL = "https://www.linkedin.com/";
+
 const WORK_EMAIL = "riihanahhessa@gmail.com";
+
+const CV_FILE = "/Rihannah_Ahmed_CV.pdf";
 
 const skills = [
   "SQL",
@@ -77,7 +82,7 @@ export default function Home() {
       <aside className="sidebar">
         <div className="profile">
           <div className="avatar">RA</div>
-          <h2>Rihannah Ahmed Essa</h2>
+          <h2>Rihanah Ahmed</h2>
           <p>Data Analyst</p>
           <span className="status">
             ● OPEN TO OPPORTUNITIES
@@ -97,11 +102,21 @@ export default function Home() {
 
         <div className="sidebar-footer">
           <a
+            className="social-button"
             href={GITHUB_URL}
             target="_blank"
             rel="noreferrer"
           >
             GitHub ↗
+          </a>
+
+          <a
+            className="social-button"
+            href={LINKEDIN_URL}
+            target="_blank"
+            rel="noreferrer"
+          >
+            LinkedIn ↗
           </a>
         </div>
       </aside>
@@ -122,8 +137,8 @@ export default function Home() {
           </h1>
 
           <p>
-            I'm Rihannah Ahmed Essa, an aspiring Data Analyst
-            and Computer Science student passionate about
+            I'm Rihanah Ahmed, an aspiring Data Analyst and
+            Computer Science student passionate about
             exploring data, solving business problems, and
             transforming raw information into meaningful
             insights. I'm also interested in AI Agents and
@@ -132,8 +147,8 @@ export default function Home() {
 
           <div className="hero-actions">
             <a
-              href="/Rihannah_Ahmed_CV.pdf"
-              download
+              href={CV_FILE}
+              download="Rihanah_Ahmed_CV.pdf"
               className="primary-button"
             >
               Download My CV ↓
@@ -162,17 +177,15 @@ export default function Home() {
           <article className="panel" id="about">
             <p className="eyebrow">01 / ABOUT ME</p>
 
-            <h2>
-              Curious mind. Data-driven approach.
-            </h2>
+            <h2>Curious mind. Data-driven approach.</h2>
 
             <p>
-              I'm Rihannah Ahmed Essa, a second-year
-              Computer Science student at Tanta University
-              with a strong interest in Data Analytics and
-              Business Intelligence. I enjoy collecting,
-              cleaning, analyzing, and visualizing data to
-              discover patterns and solve business problems.
+              I'm Rihanah Ahmed, a second-year Computer
+              Science student at Tanta University with a
+              strong interest in Data Analytics and Business
+              Intelligence. I enjoy collecting, cleaning,
+              analyzing, and visualizing data to discover
+              patterns and solve business problems.
 
               I'm also exploring AI Automation using n8n,
               Python, APIs, and AI Agents to build smarter
@@ -287,9 +300,7 @@ export default function Home() {
 
           <h2>Education & Learning</h2>
 
-          <h3>
-            B.Sc. in Computer Science
-          </h3>
+          <h3>B.Sc. in Computer Science</h3>
 
           <p>
             Second-Year Undergraduate — 2025–Expected 2029
@@ -319,22 +330,8 @@ export default function Home() {
         </section>
 
         <footer>
-          <div>
-            <a
-              href={GITHUB_URL}
-              target="_blank"
-              rel="noreferrer"
-            >
-              GitHub ↗
-            </a>
-            {" · "}
-            <a href={`mailto:${WORK_EMAIL}`}>
-              Email ↗
-            </a>
-          </div>
-
           <p>
-            © 2026 Rihannah Ahmed Essa · Built with purpose.
+            © 2026 Rihanah Ahmed · Built with purpose.
           </p>
         </footer>
       </section>
