@@ -313,3 +313,86 @@ footer {
     padding-top: 45px;
   }
 }
+
+
+/* Hero buttons */
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.primary-button,
+.secondary-button,
+.social-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.primary-button {
+  background: #d9ad61;
+  color: #111 !important;
+  border: 1px solid #d9ad61;
+}
+
+.primary-button:hover {
+  background: #edc77f;
+  transform: translateY(-2px);
+}
+
+.secondary-button {
+  background: transparent;
+  color: #d9ad61 !important;
+  border: 1px solid #d9ad61;
+}
+
+.secondary-button:hover {
+  background: rgba(217, 173, 97, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Sidebar social buttons */
+.sidebar-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.social-button {
+  width: 100%;
+  box-sizing: border-box;
+  color: #d9ad61 !important;
+  background: rgba(217, 173, 97, 0.08);
+  border: 1px solid rgba(217, 173, 97, 0.3);
+}
+
+.social-button:hover {
+  background: rgba(217, 173, 97, 0.18);
+  border-color: #d9ad61;
+}
+
+/* Remove default link underlines from these buttons */
+.primary-button:hover,
+.secondary-button:hover,
+.social-button:hover {
+  text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
