@@ -163,12 +163,12 @@ export default function Home() {
 
             <p className="hero-description hero-focus">
               <strong>Data Analytics</strong>
-              <span> · Business Intelligence · Agentic AI</span>
+              <span> · Problem Solving Intelligence · Agentic AI</span>
             </p>
 
             <p className="hero-description secondary-description">
-              Exploring Business Intelligence, AI Agents, and workflow
-              automation using Python and n8n.
+              Exploring Problem Solving Intelligence, AI Agents, and workflow
+              automation using Python,LangChain and LangGraph.
             </p>
 
             <p className="hero-description personal-description">
@@ -347,7 +347,7 @@ export default function Home() {
               <p>
                 I'm Rihanah Ahmed, a second-year Computer Science
                 student at Tanta University with a strong interest in
-                Data Analytics and Business Intelligence. I enjoy
+                Data Analytics and Problem Solving Intelligence. I enjoy
                 collecting, cleaning, analyzing, and visualizing data
                 to discover patterns and solve business problems.
               </p>
@@ -511,7 +511,7 @@ export default function Home() {
 
           <p>
             I'd love to connect and discuss Data Analytics,
-            Business Intelligence, and Agentic AI.
+            Problem Solving Intelligence, and Agentic AI.
           </p>
 
           <a
