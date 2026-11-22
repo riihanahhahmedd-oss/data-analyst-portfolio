@@ -96,7 +96,7 @@ export default function Home() {
           <a href="#contact">✉ Contact</a>
         </nav>
 
-        <div className="sidebar-footer">
+                <div className="sidebar-footer">
           <a
             className="social-button"
             href={GITHUB_URL}
@@ -105,7 +105,7 @@ export default function Home() {
           >
             GitHub ↗
           </a>
-
+        
           <a
             className="social-button"
             href={LINKEDIN_URL}
@@ -140,8 +140,8 @@ export default function Home() {
             insights. I'm also interested in AI Agents and
             workflow automation using n8n.
           </p>
-
-          <div className="hero-actions">
+          
+                   <div className="hero-actions">
             <a
               href={CV_FILE}
               download="Rihanah_Ahmed_CV.pdf"
@@ -149,12 +149,12 @@ export default function Home() {
             >
               Download My CV ↓
             </a>
-
+          
             <a
-              href={`mailto:${WORK_EMAIL}`}
+              href="#contact"
               className="secondary-button"
             >
-              Contact Me ↗
+              Contact Me ↓
             </a>
           </div>
         </section>
@@ -320,7 +320,11 @@ export default function Home() {
             </p>
           </div>
 
-          <a href={`mailto:${WORK_EMAIL}`}>
+                <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=riihanahhessa@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Contact Me ↗
           </a>
         </section>
