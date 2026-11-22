@@ -122,7 +122,7 @@ export default function Home() {
         <a className="brand" href="#home">
           <span className="brand-icon">RA</span>
           <span>
-            Rihanah<span className="brand-accent">.</span>
+            Rihanah Ahmed<span className="brand-accent">.</span>
           </span>
         </a>
 
@@ -161,16 +161,21 @@ export default function Home() {
               Into <span className="gradient-text">Insights.</span>
             </h1>
 
-            <p className="hero-description">
-              I'm <strong>Rihanah Ahmed</strong>, an aspiring Data Analyst
-              and Computer Science student passionate about exploring
-              data, solving business problems, and transforming raw
-              information into meaningful insights.
+            <p className="hero-description hero-focus">
+              <strong>Data Analytics</strong>
+              <span> · Business Intelligence · AI Automation</span>
             </p>
 
             <p className="hero-description secondary-description">
               Exploring Business Intelligence, AI Agents, and workflow
               automation using Python and n8n.
+            </p>
+
+            <p className="hero-description personal-description">
+              I'm <strong>Rihanah Ahmed</strong>, an aspiring Data Analyst
+              and Computer Science student passionate about exploring
+              data, solving business problems, and transforming raw
+              information into meaningful insights.
             </p>
 
             <div className="hero-actions">
@@ -224,7 +229,11 @@ export default function Home() {
                   <span>✦</span>
                 </div>
 
-                <h3>Insights that<br />drive decisions.</h3>
+                <h3>
+                  Insights that
+                  <br />
+                  drive decisions.
+                </h3>
 
                 <div className="chart-area">
                   <div className="chart-grid">
@@ -233,6 +242,7 @@ export default function Home() {
                     <span />
                     <span />
                   </div>
+
                   <svg
                     className="chart-line"
                     viewBox="0 0 400 130"
@@ -245,12 +255,14 @@ export default function Home() {
                         <stop offset="100%" stopColor="#a855f7" />
                       </linearGradient>
                     </defs>
+
                     <path
                       d="M0 105 C35 95 40 65 80 78 S130 100 165 60 S220 70 250 38 S305 55 335 20 S375 35 400 5"
                       fill="none"
                       stroke="url(#chartGradient)"
                       strokeWidth="3"
                     />
+
                     <path
                       d="M0 105 C35 95 40 65 80 78 S130 100 165 60 S220 70 250 38 S305 55 335 20 S375 35 400 5 L400 130 L0 130 Z"
                       fill="url(#chartGradient)"
@@ -410,7 +422,9 @@ export default function Home() {
                       <i />
                       <i />
                     </div>
-                    <span>PROJECT / {String(index + 1).padStart(2, "0")}</span>
+                    <span>
+                      PROJECT / {String(index + 1).padStart(2, "0")}
+                    </span>
                   </div>
 
                   {project.cover_image_url && (
@@ -435,12 +449,21 @@ export default function Home() {
 
                   <div className="project-links">
                     {project.github_url && (
-                      <a href={project.github_url} target="_blank" rel="noreferrer">
+                      <a
+                        href={project.github_url}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
                         GitHub ↗
                       </a>
                     )}
+
                     {project.live_url && (
-                      <a href={project.live_url} target="_blank" rel="noreferrer">
+                      <a
+                        href={project.live_url}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
                         Live Demo ↗
                       </a>
                     )}
@@ -469,7 +492,9 @@ export default function Home() {
                 Faculty of Computers and Information,
                 Tanta University, Egypt.
               </p>
-              <span className="education-status">SECOND-YEAR UNDERGRADUATE</span>
+              <span className="education-status">
+                SECOND-YEAR UNDERGRADUATE
+              </span>
             </div>
           </div>
         </section>
@@ -477,11 +502,13 @@ export default function Home() {
         <section className="contact-section reveal" id="contact">
           <div className="contact-glow" />
           <p className="eyebrow">05 / LET'S CONNECT</p>
+
           <h2>
             Have an opportunity
             <br />
             <span className="gradient-text">in mind?</span>
           </h2>
+
           <p>
             I'd love to connect and discuss Data Analytics,
             Business Intelligence, and AI Automation.
@@ -500,10 +527,16 @@ export default function Home() {
         <footer className="footer">
           <a className="brand" href="#home">
             <span className="brand-icon">RA</span>
-            <span>Rihanah<span className="brand-accent">.</span></span>
+            <span>
+              Rihanah Ahmed<span className="brand-accent">.</span>
+            </span>
           </a>
+
           <p>© 2026 Rihanah Ahmed · Built with purpose.</p>
-          <a href="#home" className="back-to-top">Back to top ↑</a>
+
+          <a href="#home" className="back-to-top">
+            Back to top ↑
+          </a>
         </footer>
       </div>
     </main>
