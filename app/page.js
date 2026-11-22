@@ -7,11 +7,10 @@ import { supabase } from "../lib/supabase";
 const GITHUB_URL =
   "https://github.com/riihanahhahmedd-oss/RihanahAhmed.github.io";
 
-// Replace this with your actual LinkedIn profile URL.
-const LINKEDIN_URL = "www.linkedin.com/in/rihanah-ahmed-772823392";
+const LINKEDIN_URL =
+  "https://www.linkedin.com/in/rihanah-ahmed-772823392/";
 
 const WORK_EMAIL = "riihanahhessa@gmail.com";
-
 const CV_FILE = "/Rihannah_Ahmed_CV.pdf";
 
 const skills = [
