@@ -8,7 +8,7 @@ const GITHUB_URL =
   "https://github.com/riihanahhahmedd-oss/RihanahAhmed.github.io";
 
 // Replace this with your actual LinkedIn profile URL.
-const LINKEDIN_URL = "https://www.linkedin.com/";
+const LINKEDIN_URL = "www.linkedin.com/in/rihanah-ahmed-772823392";
 
 const WORK_EMAIL = "riihanahhessa@gmail.com";
 
@@ -24,13 +24,10 @@ const skills = [
   "DAX",
   "Pandas",
   "NumPy",
-  "Scikit-learn",
   "C++",
   "AI Automation using n8n",
-  "REST APIs",
   "Webhooks",
-  "Git & GitHub",
-  "Docker",
+  "Git & GitHub"
 ];
 
 export default function Home() {
@@ -72,7 +69,7 @@ export default function Home() {
     },
     {
       label: "Focus",
-      value: "Data Analytics & AI Automation",
+      value: "Data Analytics & AI Agents",
       icon: "◎",
     },
   ];
