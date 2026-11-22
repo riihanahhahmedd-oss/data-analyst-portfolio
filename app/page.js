@@ -23,9 +23,9 @@ const skills = [
   "DAX",
   "Pandas",
   "NumPy",
-  "C++",
-  "AI Automation using n8n",
-  "Webhooks",
+  "Gen AI",
+  "Agentic AI",
+  "C++ for Probelm Solving",
   "Git & GitHub",
 ];
 
@@ -163,7 +163,7 @@ export default function Home() {
 
             <p className="hero-description hero-focus">
               <strong>Data Analytics</strong>
-              <span> · Business Intelligence · AI Automation</span>
+              <span> · Business Intelligence · Agentic AI</span>
             </p>
 
             <p className="hero-description secondary-description">
@@ -306,7 +306,7 @@ export default function Home() {
               <span className="floating-icon purple">✦</span>
               <div>
                 <small>EXPLORING</small>
-                <strong>AI Automation</strong>
+                <strong>Agentic AI</strong>
               </div>
             </div>
 
@@ -352,7 +352,7 @@ export default function Home() {
                 to discover patterns and solve business problems.
               </p>
               <p>
-                I'm also exploring AI Automation using n8n, Python,
+                I'm also exploring Agentic AI, Python,
                 APIs, and AI Agents to build smarter workflows and
                 automate repetitive tasks.
               </p>
@@ -511,7 +511,7 @@ export default function Home() {
 
           <p>
             I'd love to connect and discuss Data Analytics,
-            Business Intelligence, and AI Automation.
+            Business Intelligence, and Agentic AI.
           </p>
 
           <a
