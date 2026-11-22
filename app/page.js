@@ -11,7 +11,7 @@ const LINKEDIN_URL =
   "https://www.linkedin.com/in/rihanah-ahmed-772823392/";
 
 const WORK_EMAIL = "riihanahhessa@gmail.com";
-const CV_FILE = "/Rihanah_Ahmed_CV.pdf";
+const CV_FILE = "/Rihanah Ahmed CV.pdf";
 
 const skills = [
   "SQL",
