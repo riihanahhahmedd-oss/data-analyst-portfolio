@@ -5,12 +5,46 @@ import { useEffect, useState } from "react";
 import { supabase } from "../lib/supabase";
 
 const GITHUB_URL =
-  "https://github.com/riihanahhahmedd-oss/RihanahAhmed.github.io";
+  "https://github.com/riihanahhahmedd-oss";
 
 const LINKEDIN_URL =
   "https://www.linkedin.com/in/rihanah-ahmed-772823392/";
 
 const WORK_EMAIL = "riihanahhessa@gmail.com";
+
+const featuredProjects = [
+  {
+    id: "job-market-analysis",
+    slug: "job-market-analysis",
+    title: "Global Job Market & Salary Analysis",
+    category: "Data Analytics",
+    summary:
+      "Exploring global job postings, salary benchmarks, role families, seniority, skill demand, and company patterns using SQL Server and Power BI.",
+    tools: ["SQL Server", "Power BI", "DAX", "Power Query", "Data Cleaning"],
+    github_url:
+      "https://github.com/riihanahhahmedd-oss/data-analyst-portfolio/tree/main/projects/Job-Market-Analysis",
+    live_url: null,
+    cover_image_url: null,
+    status: "published",
+    display_order: 1,
+  },
+  {
+    id: "hr-analytics-dashboard",
+    slug: "hr-analytics-dashboard",
+    title: "HR Analytics Executive Dashboard",
+    category: "Business Intelligence",
+    summary:
+      "Analyzing workforce composition, compensation, hiring trends, and employee exits through Excel and an interactive dashboard.",
+    tools: ["Excel", "HTML", "CSS", "JavaScript", "Data Storytelling"],
+    github_url:
+      "https://github.com/riihanahhahmedd-oss/riihanahhahmedd-oss/tree/main/projects/HR-Analytics-Dashboard",
+    live_url:
+      "https://htmlpreview.github.io/?https://raw.githubusercontent.com/riihanahhahmedd-oss/riihanahhahmedd-oss/main/projects/HR-Analytics-Dashboard/dashboard.html",
+    cover_image_url: null,
+    status: "published",
+    display_order: 2,
+  },
+];
 const CV_FILE = "/Rihanah%20Ahmed%20CV.pdf";
 
 const skills = [
@@ -25,7 +59,7 @@ const skills = [
   "NumPy",
   "Gen AI",
   "Agentic AI",
-  "C++ for Probelm Solving",
+  "C++ Problem Solving",
   "Git & GitHub",
 ];
 
@@ -56,7 +90,21 @@ export default function Home() {
       if (error) {
         setError("Unable to load projects right now.");
       } else {
-        setProjects(data || []);
+        const databaseProjects = data || [];
+        const mergedProjects = [...databaseProjects];
+
+        featuredProjects.forEach((featured) => {
+          const alreadyExists = mergedProjects.some(
+            (project) => project.slug === featured.slug
+          );
+          if (!alreadyExists) mergedProjects.push(featured);
+        });
+
+        setProjects(
+          mergedProjects.sort(
+            (a, b) => (a.display_order ?? 999) - (b.display_order ?? 999)
+          )
+        );
       }
 
       setLoading(false);
@@ -162,13 +210,13 @@ export default function Home() {
             </h1>
 
             <p className="hero-description hero-focus">
-              <strong>Data Analytics</strong>
-              <span> · Problem Solving Intelligence · Agentic AI</span>
+              <strong>Data Analysis</strong>
+              <span> | GenAI | Agentic AI (Coming Soon) | n8n</span>
             </p>
 
             <p className="hero-description secondary-description">
-              Exploring Problem Solving Intelligence, AI Agents, and workflow
-              automation using Python,LangChain and LangGraph.
+              Exploring Generative AI, Agentic AI, and workflow automation,
+              while learning how to connect intelligent agents with data using Python and n8n.
             </p>
 
             <p className="hero-description personal-description">
