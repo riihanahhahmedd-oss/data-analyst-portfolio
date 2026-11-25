@@ -88,7 +88,7 @@ export default function Home() {
         .order("created_at", { ascending: false });
 
       if (error) {
-        setError("Unable to load projects right now.");
+        setProjects(featuredProjects);
       } else {
         const databaseProjects = data || [];
         const mergedProjects = [...databaseProjects];
