@@ -1,5 +1,7 @@
 # Global Job Market & Salary Analysis
 
+> **[Open Interactive Live Demo](https://data-analyst-portfolio-ecru-chi.vercel.app/job-market-analysis-live-demo.html)** · 3 dashboards · 6 shared slicers · Donut, treemap, heatmap, scatter plot, and trend visualizations.
+
 A three-page Power BI and SQL Server project exploring job postings, salary benchmarks, seniority, role families, skill demand, and company patterns across countries.
 
 ## Power BI report structure
