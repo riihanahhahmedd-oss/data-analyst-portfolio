@@ -16,7 +16,7 @@ SELECT
   COALESCE(LTRIM(RTRIM(industry_category)),''), COALESCE(LTRIM(RTRIM(skills)),''),
   COALESCE(LTRIM(RTRIM(currency)),''), COALESCE(CONVERT(varchar(40),salary_mid_local),''),
   COALESCE(CONVERT(varchar(40),salary_min_usd),''), COALESCE(CONVERT(varchar(40),salary_max_usd),''),
-  COALESCE(CONVERT(varchar(40),salary_mid_usd),''), COALESCE(LTRIM(RTRIM(fliar_profile_url),''))
+  COALESCE(CONVERT(varchar(40),salary_mid_usd),''), COALESCE(LTRIM(RTRIM(fliar_profile_url)), '')
  )),2) AS PostingRecordKey,
  NULLIF(LTRIM(RTRIM(posting_id)),'') AS posting_id,
  TRY_CONVERT(date, CONCAT(NULLIF(LTRIM(RTRIM(posted_month)),''),'-01')) AS posted_date,
