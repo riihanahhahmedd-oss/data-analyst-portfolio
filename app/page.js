@@ -23,7 +23,7 @@ const featuredProjects = [
     tools: ["SQL Server", "Power BI", "DAX", "Power Query", "Data Cleaning"],
     github_url:
       "https://github.com/riihanahhahmedd-oss/data-analyst-portfolio/tree/main/projects/Job-Market-Analysis",
-    live_url: null,
+    live_url: "/job-market-analysis-live-demo.html",
     cover_image_url: null,
     status: "published",
     display_order: 1,
@@ -94,10 +94,18 @@ export default function Home() {
         const mergedProjects = [...databaseProjects];
 
         featuredProjects.forEach((featured) => {
-          const alreadyExists = mergedProjects.some(
+          const existingIndex = mergedProjects.findIndex(
             (project) => project.slug === featured.slug
           );
-          if (!alreadyExists) mergedProjects.push(featured);
+          if (existingIndex === -1) {
+            mergedProjects.push(featured);
+          } else {
+            mergedProjects[existingIndex] = {
+              ...featured,
+              ...mergedProjects[existingIndex],
+              live_url: featured.live_url || mergedProjects[existingIndex].live_url,
+            };
+          }
         });
 
         setProjects(
